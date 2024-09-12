@@ -1,10 +1,16 @@
 import {StyleSheet, Text, View} from 'react-native';
 
-const HelloWorldScren = () => {
+type HelloWorldProps = {
+  name?: string;
+};
+
+const HelloWorldScren = ({name}: HelloWorldProps) => {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.title}>Hello World</Text>
+        <Text numberOfLines={1} ellipsizeMode="tail" style={styles.title}>
+          Hello, {name}
+        </Text>
       </View>
     </>
   );
